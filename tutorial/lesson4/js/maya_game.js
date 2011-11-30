@@ -5,8 +5,8 @@ var state=0;
 var score=0;
 var timer;
 var maya = { 
-    timer_ticks : 10,
-    rate: 3,
+    timer_ticks : 20, // higher is faster
+    flapping_rate: 3,          // higher is slower
     avatars: ["img/maya_rest.png", "img/maya_up.png", "img/maya_down.png"],
     state: 0,
     score: 0,
@@ -43,11 +43,7 @@ var maya = {
     //
     //
     countdown: function () {
-        // update the timer
-        if (maya.timer > 0) {
-            maya.timer--;
-            $("#timer").html(maya.timer/maya.timer_ticks);
-        }
+        maya.timer --;
         // test for game over
         if (maya.timer === 0) {
             maya.state = 0;
@@ -57,11 +53,14 @@ var maya = {
         else
             setTimeout(maya.countdown, 1000/maya.timer_ticks);
         // flap maya's wings
-        if (maya.timer % maya.rate === 0) {
+        if (maya.timer % maya.flapping_rate === 0) {
             maya.cycle ++;
             if (maya.cycle > maya.avatars.length)
                 maya.cycle = 0;
             $('#maya img').attr('src', maya.avatars[maya.cycle]);
+            // and update the timer
+            $("#timer").html(maya.timer/maya.timer_ticks);
+            // TODO: make maya flow the mouse
         }
     },
     play: function () {
