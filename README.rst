@@ -89,7 +89,7 @@ Exercises
 Keeping the score live on the page
 ----------------------------------
 
-In this chapter we will introduce the DOM nad use it to read and write html
+In this chapter we will introduce the DOM and use it to read and write html
 elments. We will use jQuery to get the DOM, read it and change it so the page
 corner will keep the current score::
 
