@@ -1,4 +1,3 @@
-var score=0;
 var maya = { 
     timer_ticks : 20, // higher is faster
     flapping_rate: 3,          // higher is slower
