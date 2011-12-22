@@ -9,24 +9,23 @@ var maya = {
     cycle: 0,
     init: function () {
         $("#play").click(maya.play);
-        $(".hotspot").hover(function() { 
-            maya.hover(this.id); 
-        });
+        $(".hotspot").hover(maya.hover);
     },
     /*
         hover
         =====
-        hovering over a hotspot - score and update
+        hovering over a hotspot - update score & target
         params:
-            over_what - 'p', 'l', 'a', 'y'
+            this.id - 'p', 'l', 'a' or 'y'
 
     */  
-    hover: function (over_what) {
-        if (over_what == maya.target) {
+    hover: function () {
+        if (this.id == maya.target) {
             maya.score ++;
-            maya.target = maya.next_target[over_what];
+            maya.target = maya.next_target[this.id];
             $(".hotspot").css({color: "white"});
-            $("#"+maya.target).css({color: "black"});
+            var target_id = "#" + maya.target;
+            $(target_id).css({color: "black"});
             $("#scoreii").html(maya.score);
         }
     },
