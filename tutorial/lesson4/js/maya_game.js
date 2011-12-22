@@ -1,9 +1,3 @@
-var TIMER_TICKS = 10; // how many times do we countdown in a second
-var FLAPPING_SPEED = 3;
-var maya_avatars = ["img/maya_rest.png", "img/maya_up.png", "img/maya_down.png"];
-var state=0;
-var score=0;
-var timer;
 var maya = { 
     timer_ticks : 20, // higher is faster
     flapping_rate: 3,          // higher is slower
@@ -24,7 +18,7 @@ var maya = {
     hover: function (over_what) {
         var time2toggle = {'y': 1, 'x': 2};
         if (maya.state == time2toggle[over_what]) {
-            score ++;
+            maya.score ++;
             // toggle the state:
             // TODO: how to simply change state from 1 to 2 and 2 to 1?
             if (maya.state == 1)
