@@ -1,0 +1,34 @@
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <!-- NO NET: <script src="../../lib/jquery.js"></script> -->
+    <script src="js/maya_game.js"></script>
+    <style>
+        #game { text-align: center; width:600px; padding: 0.5em;}
+        #play { font-size: 26px; }
+        #timer { float: left; text-align:left;border: 1px dashed green;width:3em; padding-left: 1.5em;}
+        #maya {float: right;}
+        .hotspot { font-size:60px; }
+        #p, #y { float:left; }
+        #l, #a { float:right; }
+        h2 { font-weight: normal; }
+        #scoreii { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <h1 id="play">Play</h1>
+        <h2>Score: <span id="scoreii">0</span></h2>
+        <h3 id="timer">10</h3>
+        <div id="maya">
+            <img src="img/maya_rest.png" />
+        </div>
+        <div id="p" class="hotspot">P</div>
+        <div id="l" class="hotspot">L</div>
+        <!-- DONE: add hotspots for A&Y soi the user can move in a square -->
+        <div style="height:150px;"></div>
+        <div id="a" class="hotspot">A</div>
+        <div id="y" class="hotspot">Y</div>
+    </div>
+</body>
+</html>
