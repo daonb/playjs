@@ -48,13 +48,15 @@ var maya = {
         }
     },
     play: function () {
-        maya.timer = 11*maya.timer_ticks;
-        maya.score = 0;
-        maya.target = 'p';
-        $("#scoreii").html(maya.score);
-        $(".hotspot").css({color: "white"});
-        $("#"+maya.target).css({color: "black"});
-        setTimeout(maya.countdown, 1000/maya.timer_ticks);
+        if (maya.target === 0) {
+            maya.timer = 11*maya.timer_ticks;
+            maya.score = 0;
+            maya.target = 'p';
+            $("#scoreii").html(maya.score);
+            $(".hotspot").css({color: "white"});
+            $("#"+maya.target).css({color: "black"});
+            setTimeout(maya.countdown, 1000/maya.timer_ticks);
+        }
     },
     flap_wings: function () {
         // flap maya's wings
